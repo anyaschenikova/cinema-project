@@ -7,11 +7,22 @@ body {
   font-family: "Roboto", serif;
   color: white;
 }
-
+.container {
+  max-width: 1170px;
+  margin: auto;
+  width: 90%;
+}
 .header {
-  min-height: 100vh;
+  padding-bottom: 60px;
   background: linear-gradient(180deg, rgba(98, 20, 2, 0.31) 0%, #621402 85.62%),
     url(../img/bg.jpg) no-repeat center top / cover;
+}
+.m-menu {
+  display: none;
+}
+
+.nav {
+  position: relative;
 }
 
 .navbar {
@@ -20,10 +31,7 @@ body {
   padding-top: 30px;
   padding-bottom: 30px;
 }
-.container {
-  max-width: 1170px;
-  margin: auto;
-}
+
 .menu {
   list-style-type: none;
   display: flex;
@@ -183,17 +191,21 @@ body {
 }
 
 .select-cinema {
-  min-width: 470px;
+  width: 470px;
 }
 
 .select-time {
-  min-width: 108px;
+  width: 108px;
 }
 
 .scheme {
   margin-bottom: 40px;
   background: rgba(36, 36, 36, 0.18);
   border-radius: 10px;
+}
+
+.scheme-svg {
+  max-width: 1170px;
 }
 
 .scheme path:not(.light) {
@@ -233,6 +245,7 @@ body {
   align-items: center;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   max-width: 1024px;
+  width: 90%;
   margin: auto;
   padding-top: 22px;
   padding-bottom: 38px;
@@ -277,4 +290,182 @@ body {
   line-height: 21px;
   padding: 24px 52px;
   text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+  .select-cinema {
+    width: 100%;
+  }
+  .select-time {
+    width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 750px;
+  }
+  .session {
+    flex-wrap: wrap;
+  }
+  .session-date {
+    flex-basis: 70%;
+    margin-bottom: 40px;
+  }
+  .session-time {
+    order: 0;
+  }
+  .session-cinema {
+    margin-top: 0px;
+    order: 3;
+  }
+  .menu-item {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 560px;
+  }
+  .menu {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    flex-direction: column;
+    padding: 20px;
+    margin-left: 20px;
+    background-color: #621402;
+    z-index: 9;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20%);
+    transition: opacity 0.3s, transform 0.4s;
+  }
+  .menu-item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  .m-menu {
+    background-color: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    display: block;
+    cursor: pointer;
+  }
+  .is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .film-description {
+    margin-right: 30px;
+  }
+  .film {
+    flex-direction: column;
+  }
+  .film-trailer {
+    margin-right: auto;
+    margin-left: 0;
+    margin-top: 40px;
+  }
+  .legend-label {
+    margin-right: 0;
+  }
+  .legend svg {
+    margin-right: 1px;
+  }
+}
+
+@media (max-width: 450px) {
+  .container {
+    max-width: 300px;
+  }
+  .menu {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    flex-direction: column;
+    padding: 20px;
+    margin-left: 20px;
+    background-color: #621402;
+    z-index: 9;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20%);
+    transition: opacity 0.3s, transform 0.4s;
+  }
+  .menu-item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  .m-menu {
+    background-color: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    display: block;
+    cursor: pointer;
+  }
+  .is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .film-description {
+    margin-right: 30px;
+  }
+  .film {
+    flex-direction: column;
+  }
+  .film-trailer {
+    margin-right: auto;
+    margin-left: 0;
+    margin-top: 40px;
+  }
+  .legend-label {
+    margin-right: 0;
+    flex-wrap: wrap;
+  }
+  .legend svg {
+    margin-right: 1px;
+  }
+  .session-date-item {
+    width: 100%;
+  }
+  .session-month {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .session-day {
+    font-weight: 900;
+    font-size: 17px;
+    line-height: 35px;
+  }
+
+  .session-week {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .scheme {
+    overflow-x: scroll;
+  }
+  .scheme-svg {
+    width: 150%;
+  }
+  .button {
+    padding: 20px 10px;
+  }
+  .price-label {
+    display: block;
+    font-size: 14px;
+    line-height: 17px;
+  }
 }
